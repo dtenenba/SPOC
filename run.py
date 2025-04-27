@@ -309,6 +309,8 @@ def get_best_hs_matches(sequence:str, evalue:float=None, max_hits:int=5):
             evalue = 1
         elif seq_len < 100:
             evalue = 0.01
+        else:
+            evalue = 0.001
     
     # Create a temporary file for the query sequence in FASTA format
     temp_fd, temp_path = tempfile.mkstemp(suffix=".fasta")
